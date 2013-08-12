@@ -59,6 +59,7 @@
     
     
     
+    
 }
 
 
@@ -81,6 +82,8 @@
 -(IBAction)clearButtonPressed:(id)sender
 {
     label.text = @"0";
+    _nebikigo.text=@"0";
+    _percentLabel.text=@"0";
     startInput = YES;
 }
 
