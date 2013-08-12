@@ -54,9 +54,11 @@
      
     self.nebikigo.text =[NSString stringWithFormat:@"%d", ([label.text intValue] * (100- sliderValue)) / 100];
     
-    [self.percentLabel setText:[NSString stringWithFormat:@"%.0f",slider.value]
+    [self.percentLabel setText:[NSString stringWithFormat:@"%.0f",slider.value] 
      ];
-}
+
+
+    }
 
 
 
