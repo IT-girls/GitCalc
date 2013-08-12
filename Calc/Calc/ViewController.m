@@ -83,6 +83,7 @@
 {
     label.text = @"0";
     _nebikigo.text=@"0";
+    _percentLabel.text=@"0";
     startInput = YES;
 }
 
@@ -90,7 +91,6 @@
 -(IBAction)equalButtonPressed:(id)sender{
     // 直前に+を押されたら
     if (operation == 10){
-      
         currentValue += [label.text intValue];
     } else if (operation == 11){ //-を押されたら
         currentValue -= [label.text intValue];
