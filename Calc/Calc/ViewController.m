@@ -14,27 +14,12 @@
 
 @implementation ViewController
 
-//Slider部分
-//- (IBAction)changeSlider:(id)sender
-//{
-//
-//    myslider.minimumValue = 0.0;
-//    myslider.maximumValue = 100.0;
-//
-//    //スライダーの現在値を取得
-//    //float v = 0;
-//    //v = myslider.value;
-//
-//    //ラベルに値を表示
-//    myoff.text = [NSString stringWithFormat:@"%.0f" ,myslider.value];
-//}
-
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     startInput = YES;
     currentValue = 0;
 }
@@ -50,15 +35,22 @@
 - (IBAction)changeSliderValue:(id)sender {
     
     UISlider *slider = sender;
-    NSInteger sliderValue = floor(slider.value);
-     
+    //  Before
+    //    NSInteger sliderValue = floor (slider.value) ;
+    //  After 値を5ずつ増減させる
+    NSInteger sliderValue = floor (slider.value*0.2)*5 ;
+    
+    
     self.nebikigo.text =[NSString stringWithFormat:@"%d", ([label.text intValue] * (100- sliderValue)) / 100];
     
-    [self.percentLabel setText:[NSString stringWithFormat:@"%.0f",slider.value] 
-     ];
+    [self.percentLabel setText : [NSString stringWithFormat:@"%d", sliderValue]];
+    
+    //これをコメントアウトしないと常に50にセットしようとして挙動不審になる
+    //    [slider setValue:50 animated:YES];
+    
+    
+}
 
-
-    }
 
 
 
